@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/TheRatsInTheWalls/flashcards/issues"
   },
-  "homepage": "https://github.com/TheRatsInTheWalls/flashcards#readme"
+  "homepage": "https://github.com/TheRatsInTheWalls/flashcards#readme",
+  "dependencies": {
+    "body-parser": "~1.4.2",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "joi": "^11.1.1",
+    "joi-objectid": "^2.0.0",
+    "mongodb": "^2.2.31"
+  }
 }
