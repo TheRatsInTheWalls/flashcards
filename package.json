@@ -16,5 +16,33 @@
   "bugs": {
     "url": "https://github.com/TheRatsInTheWalls/flashcards/issues"
   },
-  "homepage": "https://github.com/TheRatsInTheWalls/flashcards#readme"
+  "homepage": "https://github.com/TheRatsInTheWalls/flashcards#readme",
+  "dependencies": {
+    "angular": "^1.6.7",
+    "body-parser": "~1.4.2",
+    "bower": "^1.8.2",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "joi": "^11.1.1",
+    "joi-objectid": "^2.0.0",
+    "mongodb": "^2.2.31"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-strip-comments": "^2.4.5",
+    "gulp-uglify": "^2.1.0",
+    "gulp-zip": "^4.0.0",
+    "merge-stream": "^1.0.1"
+  }
 }
