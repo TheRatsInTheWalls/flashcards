@@ -11,13 +11,11 @@
         .state('site.home', {
           url: '/dashboard',
           views: {
-            'content@site': {
-              templateUrl: 'client/site/home/home.html',
-              controller: 'homeController as hc'
+            'root': {
+              component: 'homePage'
             }
           },
           resolve: {
-            channels: getChannels
           }
         })
     }

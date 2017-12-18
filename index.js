@@ -11,7 +11,7 @@ dotenv.config()
 
 const port = process.env.PORT || 8080
 app.listen(port)
-    .then(() => console.log(`Flashcards listening on port: ${port}`))
+console.log(`Flashcards listening on port: ${port}`)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({

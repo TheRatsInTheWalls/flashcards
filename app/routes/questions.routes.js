@@ -1,5 +1,6 @@
+'use strict'
 const router = require('express').Router()
-const questionsController = require('../controllers/addresses.controller')
+const questionsController = require('../controllers/questions.controller')
 const validateBody = require('../filters/validate.body')
 const question = require('../models/question')
 

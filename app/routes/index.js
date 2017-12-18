@@ -1,10 +1,9 @@
-
+'use strict'
 const router = require('express').Router()
 const questionsRoutes = require('./questions.routes')
-
+const clientRoutes = require('./client.routes')
 module.exports = router;
 
-router.use(authenticate)
 
 // API routes (group routing modules here - no empty lines between)
 router.use('/api/questions', questionsRoutes)

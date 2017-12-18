@@ -4,11 +4,8 @@
  
         'ui.router',
         'ui.bootstrap',
-        'ngCookies',
 
         'client.layout',
-
-        'client.crud',
 
         'client.site'
     ])
@@ -30,7 +27,7 @@
     ]
 
     function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise('/otherwise')
+        $urlRouterProvider.otherwise('/home')
         $locationProvider.html5Mode(true)
     }
 

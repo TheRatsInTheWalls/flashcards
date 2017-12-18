@@ -19,8 +19,10 @@
   "homepage": "https://github.com/TheRatsInTheWalls/flashcards#readme",
   "dependencies": {
     "body-parser": "~1.4.2",
+    "bower": "^1.8.2",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
+    "gulp": "^3.9.1",
     "joi": "^11.1.1",
     "joi-objectid": "^2.0.0",
     "mongodb": "^2.2.31"
