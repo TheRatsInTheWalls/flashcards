@@ -1,0 +1,20 @@
+{
+  "name": "flashcards",
+  "version": "1.0.0",
+  "description": "Basic crud app to stay sharp while looking for work.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRatsInTheWalls/flashcards.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheRatsInTheWalls/flashcards/issues"
+  },
+  "homepage": "https://github.com/TheRatsInTheWalls/flashcards#readme"
+}
