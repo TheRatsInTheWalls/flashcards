@@ -16,6 +16,15 @@
             }
           }
         })
+        .state('flashcards', {
+          url: '/flashcards',
+         // abstract: true,
+          views: {
+            root: {
+              component: 'flashcardFrame'
+            }
+          }
+        })
     }
   
   })();
