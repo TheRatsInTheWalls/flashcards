@@ -8,14 +8,12 @@
   
     function RouteConfig($stateProvider) {
       $stateProvider
-        .state('site.home', {
-          url: '/dashboard',
+        .state('home', {
+          url: '/home',
           views: {
-            'root': {
+            root: {
               component: 'homePage'
             }
-          },
-          resolve: {
           }
         })
     }

@@ -24,9 +24,6 @@ var source = {
 
             // other js files [controllers, services, etc.]
             'content/client/**/!(module)*.js',
-
-            // start client app
-            'content/client/bootstrap.js'
         ]
     }
 }

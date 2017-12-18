@@ -15,4 +15,4 @@ angular.module('client.site').component('homePage', {
         const vm = this
        
     }
-})()
+})();

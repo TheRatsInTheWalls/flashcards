@@ -1,11 +1,9 @@
 (function () {
-    'use strict';
+    'use strict'
     angular.module('client', [
  
         'ui.router',
         'ui.bootstrap',
-
-        'client.layout',
 
         'client.site'
     ])
