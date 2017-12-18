@@ -1,4 +1,4 @@
-const es = require('event-stream')
+//const es = require('event-stream')
 const gulp = require('gulp')
 const minimist = require('minimist')
 const fs = require('fs')
@@ -41,7 +41,6 @@ const appWasBroken = {
 
 gulp.task('js', buildApp('js'))
 
-// creates task to concat angular files
 function buildApp(fileset) {
     return function () {
         let isBroken = false
@@ -78,7 +77,6 @@ gulp.task('watch', ['js' ], function () {
     gulp.watch(source.js.src, { interval: 200 }, ['js'])
 })
 
-// builds vendor files listed in app.scripts.json
 gulp.task('vendor', () => buildVendor(scripts, destinations.js))
 
 function buildVendor(scripts, dest) {
@@ -117,7 +115,6 @@ const knownOptions = {
 }
 
 const options = minimist(process.argv.slice(2), knownOptions)
-// This task is specifically setup for deploying to AZURE.
 
 gulp.task('prod', ['vendor', 'js'])
 
@@ -131,7 +128,6 @@ function buildProdPackage() {
         '!**/client/libs/**'
     ]
 
-    // add exclusion patterns for all dev dependencies
     let packageJSON = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8'))
     let devDeps = packageJSON.devDependencies
 
