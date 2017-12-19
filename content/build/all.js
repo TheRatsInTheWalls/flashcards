@@ -40,8 +40,34 @@
           component: 'homePage'
         }
       }
+    }).state('flashcards', {
+      url: '/flashcards',
+      // abstract: true,
+      views: {
+        root: {
+          component: 'flashcardFrame'
+        }
+      }
     });
   }
+})();
+'use strict';
+
+(function () {
+    'use strict';
+
+    angular.module('client.site').component('flashcardFrame', {
+        templateUrl: 'client/site/flashcards/flashcard-frame.html',
+        controller: 'flashFrameController as ffc'
+    });
+
+    angular.module('client.site').controller('flashFrameController', FlashFrameController);
+
+    FlashFrameController.$inject = ['$state'];
+
+    function FlashFrameController($state) {
+        var vm = this;
+    }
 })();
 'use strict';
 
