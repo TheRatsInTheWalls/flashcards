@@ -1,6 +1,6 @@
 'use strict'
-const questionsService = require('../services/questions-service')
-const apiPrefix = '/api/questions';
+const categoriesService = require('../services/categories-service')
+const apiPrefix = '/api/categories';
 
 module.exports = {
     readAll: _readAll,
@@ -11,13 +11,13 @@ module.exports = {
 }
 
 function _readAll(req, res) {
-    questionsService
+    categoriesService
         .readAll()
-        .then(questions => {
-            for (let i = 0; i < questions.length; i++) {
-                questions[i]._id = questions[i]._id.tostring()
+        .then(categories => {
+            for (let i = 0; i < categories.length; i++) {
+                categories[i]._id = categories[i]._id.tostring()
             }
-            res.json(questions)
+            res.json(categories)
         })
         .catch(err => {
             console.log(err)
@@ -27,11 +27,11 @@ function _readAll(req, res) {
 }
 
 function _readById(req, res) {
-    questionsService
+    categoriesService
         .readById(req.params.id)
-        .then(question => {
-            questions._id = questions._id.tostring()
-            res.send(question)
+        .then(category => {
+            category._id = questcategoryions._id.tostring()
+            res.send(category)
         })
         .catch(err => {
             console.log(err)
@@ -40,7 +40,7 @@ function _readById(req, res) {
 }
 
 function _create(req, res) {
-    questionsService
+    categoriesService
         .create(req.model)
         .then(id => {
             res.status(201).send(`${id} created`)
@@ -52,7 +52,7 @@ function _create(req, res) {
 }
 
 function _update(req, res) {
-    questionsService
+    categoriesService
         .update(req.params.id, req.model)
         .then(() => {
             const responseModel = new responses.SuccessResponse()
@@ -65,7 +65,7 @@ function _update(req, res) {
 }
 
 function _delete(req, res) {
-    questionsService
+    categoriesService
         .deactivate(req.params.id)
         .then(() => {
             const responseModel = new responses.SuccessResponse()

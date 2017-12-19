@@ -13,7 +13,7 @@ module.exports = {
 }
 
 function _readAll() {
-    return conn.db().collection('questions').find({"dateDeactivated": null }).toArray()
+    return conn.db().collection('categories').find({"dateDeactivated": null }).toArray()
         .then(questions => {
             for (let i = 0; i < questions.length; i++) {
                 let question = questions[i]
@@ -26,7 +26,7 @@ function _readAll() {
 }
 
 function _readById(id) {
-    return conn.db().collection('questions').findOne({ _id: new ObjectId(id), "dateDeactivated": null })
+    return conn.db().collection('categories').findOne({ _id: new ObjectId(id), "dateDeactivated": null })
         .then(question => {
             question._id = question._id.toString()
             question.categoryId = question.categoryId.toString()
@@ -38,15 +38,13 @@ function _readById(id) {
 function _create(doc) {
     let now = new Date()
     let newDoc = { 
-        categoryId: new ObjectId(doc.categoryId), 
-        question: doc.question, 
-        answer: doc.answer, 
+        category: doc.category, 
         displayOrder: doc.displayOrder, 
         dateCreated: now, 
         dateModified: now, 
         dateDeactivated: null 
     }
-    return conn.db().collection('questions')
+    return conn.db().collection('categories')
         .insert(newDoc)
         .then(result => result.insertedIds[0].toString())
 }
@@ -54,18 +52,16 @@ function _create(doc) {
 function _update(id, doc) {
     let now = new Date()
     let newDoc = { 
-        categoryId: ObjectId(doc.categoryId), 
-        question: doc.question, 
-        answer: doc.answer, 
+        category: doc.category, 
         displayOrder: doc.displayOrder,
         dateModified: now
     }
-    return conn.db().collection('questions').updateOne({ _id: ObjectId(id) }, { $set: newDoc })
+    return conn.db().collection('categories').updateOne({ _id: ObjectId(id) }, { $set: newDoc })
         .then(result => Promise.resolve())
 }
 
 function _deactivate(id) {
     let now = new Date()
-    return conn.db().collection('questions').updateOne({ _id: new ObjectId(id) }, { $set: { dateModified: now, dateDeactivated: now } })
+    return conn.db().collection('categories').updateOne({ _id: new ObjectId(id) }, { $set: { dateModified: now, dateDeactivated: now } })
         .then(result => Promise.resolve())
 }
