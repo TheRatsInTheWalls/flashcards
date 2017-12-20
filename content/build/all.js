@@ -3,9 +3,7 @@
 (function () {
     'use strict';
 
-    angular.module('client', ['ui.router', 'ui.bootstrap', 'client.site']
-    //'client.services'
-    );
+    angular.module('client', ['ui.router', 'ui.bootstrap', 'client.site', 'client.services', 'client.crud']);
 
     angular.module('client').config(RouteConfig).run(StateErrorHandler);
 
@@ -27,6 +25,25 @@
 'use strict';
 
 (function () {
+  'use strict';
+
+  angular.module('client.crud', ['ui.router', 'client.services', 'ui-bootstrap']);
+  angular.module('client.crud').config(RouteConfig);
+
+  RouteConfig.$inject = ['$StateProvider'];
+
+  function RouteConfig($stateProvider) {}
+})();
+'use strict';
+
+(function () {
+    'use strict';
+
+    angular.module('client.services', []);
+})();
+'use strict';
+
+(function () {
   "use strict";
 
   angular.module('client.site', ['ui.router', 'ui.bootstrap']);
@@ -35,19 +52,18 @@
   RouteConfig.$inject = ["$stateProvider"];
 
   function RouteConfig($stateProvider) {
-    $stateProvider.state('home', {
-      url: '/home',
-      views: {
-        root: {
-          component: 'homePage'
-        }
-      }
-    }).state('flashcards', {
-      url: '/flashcards',
-      // abstract: true,
+    $stateProvider.state('frame', {
+      abstract: true,
       views: {
         root: {
           component: 'flashcardFrame'
+        }
+      }
+    }).state('frame.home', {
+      url: '/home',
+      views: {
+        content: {
+          component: 'homePage'
         }
       }
     });
@@ -58,8 +74,7 @@
 (function () {
     'use strict';
 
-    // angular.module('client.services')
-    //     .factory('categoriesService', CategoriesServiceFactory)
+    angular.module('client.services').factory('categoriesService', CategoriesServiceFactory);
 
     CategoriesServiceFactory.$inject = ['$http', '$q'];
 
@@ -103,24 +118,6 @@
 (function () {
     'use strict';
 
-    angular.module('client.site').component('flashcardFrame', {
-        templateUrl: 'client/site/flashcards/flashcard-frame.html',
-        controller: 'flashFrameController as ffc'
-    });
-
-    angular.module('client.site').controller('flashFrameController', FlashFrameController);
-
-    FlashFrameController.$inject = ['$state'];
-
-    function FlashFrameController($state) {
-        var vm = this;
-    }
-})();
-'use strict';
-
-(function () {
-    'use strict';
-
     angular.module('client.site').component('homePage', {
         templateUrl: 'client/site/home/home.html',
         controller: 'homeController as hc'
@@ -131,6 +128,24 @@
     HomeController.$inject = ['$state'];
 
     function HomeController($state) {
+        var vm = this;
+    }
+})();
+'use strict';
+
+(function () {
+    'use strict';
+
+    angular.module('client.site').component('flashcardFrame', {
+        templateUrl: 'client/site/page-frame/frame.html',
+        controller: 'frameController as ffc'
+    });
+
+    angular.module('client.site').controller('frameController', FrameController);
+
+    FrameController.$inject = ['$state'];
+
+    function FrameController($state) {
         var vm = this;
     }
 })();

@@ -1,8 +1,8 @@
 (function () {
     'use strict'
 
-    // angular.module('client.services')
-    //     .factory('categoriesService', CategoriesServiceFactory)
+    angular.module('client.services')
+        .factory('categoriesService', CategoriesServiceFactory)
 
     CategoriesServiceFactory.$inject = ['$http', '$q']
 
