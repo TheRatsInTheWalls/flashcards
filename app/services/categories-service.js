@@ -38,6 +38,7 @@ function _create(doc) {
     let now = new Date()
     let newDoc = { 
         category: doc.category, 
+        topic: doc.topic,
         displayOrder: doc.displayOrder, 
         dateCreated: now, 
         dateModified: now, 
@@ -52,6 +53,7 @@ function _update(id, doc) {
     let now = new Date()
     let newDoc = { 
         category: doc.category, 
+        topic: doc.topic,
         displayOrder: doc.displayOrder,
         dateModified: now
     }

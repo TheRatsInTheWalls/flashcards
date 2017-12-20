@@ -5,6 +5,7 @@ Joi.objectId = require('joi-objectid')(Joi)
 const schema = {
     _id: Joi.objectId(),
     category: Joi.string().required(),
+    topic: Joi.string().required(),
     displayOrder: Joi.number().required()
 }
 
