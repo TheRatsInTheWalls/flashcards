@@ -1,6 +1,6 @@
 'use strict'
 const questionsService = require('../services/questions-service')
-const apiPrefix = '/api/questions';
+const apiPrefix = '/api/questions'
 
 module.exports = {
     readAll: _readAll,
@@ -14,16 +14,12 @@ function _readAll(req, res) {
     questionsService
         .readAll()
         .then(questions => {
-            for (let i = 0; i < questions.length; i++) {
-                questions[i]._id = questions[i]._id.tostring()
-            }
             res.json(questions)
         })
         .catch(err => {
             console.log(err)
             res.status(500).send(err)
         })
-
 }
 
 function _readById(req, res) {
@@ -43,7 +39,7 @@ function _create(req, res) {
     questionsService
         .create(req.model)
         .then(id => {
-            res.status(201).send(`${id} created`)
+            res.status(201).location(`${apiPrefix}/${id}`).send(`${id} created`)
         })
         .catch(err => {
             console.log(err)

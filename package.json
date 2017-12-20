@@ -19,7 +19,9 @@
   "homepage": "https://github.com/TheRatsInTheWalls/flashcards#readme",
   "dependencies": {
     "angular": "^1.6.7",
+    "angular-ui-bootstrap": "^2.5.6",
     "body-parser": "~1.18.2",
+    "bootstrap": "^3.3.7",
     "bower": "^1.8.2",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",

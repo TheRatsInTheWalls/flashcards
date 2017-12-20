@@ -20,7 +20,7 @@ function _readAll() {
                 question._id = question._id.toString()
                 question.categoryId = question.categoryId.toString()
             }
-            return entries
+            return questions
         })
         .catch(data => console.log(data))
 }

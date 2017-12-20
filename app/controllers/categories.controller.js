@@ -1,6 +1,6 @@
 'use strict'
 const categoriesService = require('../services/categories-service')
-const apiPrefix = '/api/categories';
+const apiPrefix = '/api/categories'
 
 module.exports = {
     readAll: _readAll,
@@ -14,10 +14,7 @@ function _readAll(req, res) {
     categoriesService
         .readAll()
         .then(categories => {
-            for (let i = 0; i < categories.length; i++) {
-                categories[i]._id = categories[i]._id.tostring()
-            }
-            res.json(categories)
+            res.json({ categories: categories })
         })
         .catch(err => {
             console.log(err)
@@ -43,7 +40,7 @@ function _create(req, res) {
     categoriesService
         .create(req.model)
         .then(id => {
-            res.status(201).send(`${id} created`)
+            res.status(201).location(`${apiPrefix}/${id}`).send(`${id} created`)
         })
         .catch(err => {
             console.log(err)

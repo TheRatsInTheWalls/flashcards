@@ -14,23 +14,22 @@ module.exports = {
 
 function _readAll() {
     return conn.db().collection('categories').find({"dateDeactivated": null }).toArray()
-        .then(questions => {
-            for (let i = 0; i < questions.length; i++) {
-                let question = questions[i]
-                question._id = question._id.toString()
-                question.categoryId = question.categoryId.toString()
+        .then(categories => {
+            for (let i = 0; i < categories.length; i++) {
+                let category = categories[i]
+                category._id = category._id.toString()
+                
             }
-            return entries
+            return categories
         })
         .catch(data => console.log(data))
 }
 
 function _readById(id) {
     return conn.db().collection('categories').findOne({ _id: new ObjectId(id), "dateDeactivated": null })
-        .then(question => {
-            question._id = question._id.toString()
-            question.categoryId = question.categoryId.toString()
-            return question
+        .then(category => {
+            category._id = category._id.toString()
+            return category
         })
         .catch(data => console.log(data))
 }
