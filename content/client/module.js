@@ -4,7 +4,8 @@
         'ui.router',
         'ui.bootstrap',
         'client.site',
-        //'client.services'
+        'client.services',
+        'client.crud'
     ])
 
     angular.module('client')
