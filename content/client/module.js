@@ -18,11 +18,7 @@
         $rootScope.$on('$stateChangeError', info => $log.log(info))
     }
 
-    RouteConfig.$inject = [
-        '$stateProvider',
-        '$urlRouterProvider',
-        '$locationProvider'
-    ]
+    RouteConfig.$inject = ['$stateProvider', '$urlRouterProvider','$locationProvider']
 
     function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider.otherwise('/home')
