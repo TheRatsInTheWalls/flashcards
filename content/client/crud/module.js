@@ -74,6 +74,9 @@
                     questions: {
                         component: 'questionsForm'
                     }
+                },
+                resolve: {
+                    categories: _getAllCategories
                 }
             })
             .state('frame.questions.edit', {
@@ -84,7 +87,8 @@
                     }
                 },
                 resolve: {
-                    question: _getQuestion
+                    question: _getQuestion,
+                    categories: _getAllCategories
                 }
             })
             //--------------------------------------review------------------------------------------------------------//

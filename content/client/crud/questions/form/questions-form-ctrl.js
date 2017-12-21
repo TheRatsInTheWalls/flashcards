@@ -4,7 +4,8 @@
         templateUrl: 'client/crud/questions/form/questions-form.html',
         controller: 'questionsFormController as fc',
         bindings: {
-            question: "<"
+            question: "<",
+            categories: "<"
         }
     })
 
