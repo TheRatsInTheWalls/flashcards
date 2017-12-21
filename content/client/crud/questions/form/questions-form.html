@@ -1,24 +1,33 @@
-<form name="fc.form" novalidate ng-submit="fc.submitForm()">
-        <div class="form-group">
-            <label for="categoryId">Category ID</label>
-            <input name="categoryId" ng-model="fc.formData.categoryId"/>
-        </div>
-        <div class="form-group">
-                <label for="question">Question</label>
-                <input name="question" ng-model="fc.formData.question"/>
+<div class='row'>
+    <div class='col-xs-8 col-xs-offset-2'>
+        <form name="fc.form" novalidate ng-submit="fc.submitForm()">
+            <!-- <div class="form-group">
+                <label for="categoryId">Category ID</label>
+                <input name="categoryId" class="form-control" ng-model="fc.formData.categoryId" />
+            </div> -->
+            <div class="form-group">
+                <label for="categoryId">Category</label>
+                <select ng-options="cat._id as cat.category for cat in fc.categories" ng-model="fc.formData.categoryId" class="form-control" name="categoryId">
+                <option value='' selected disabled>Select a category</option>
+                </select>
             </div>
             <div class="form-group">
-                    <label for="answer">Answer</label>
-                    <input name="answer" ng-model="fc.formData.answer"/>
-                </div>
-        <div class="form-group">
-            <label for="displayOrder">display order</label>
-            <input type="number" name="displayOrder" ng-model="fc.formData.displayOrder"/>
-        </div>
-        <div class="button-group">
-            <input type="submit" class="btn btn-succes" name="submitBtn" value="Submit"/>
-            <input type="button" class="btn btn-warn" name="cancelBtn" value="Cancel" ng-click="fc.cancelForm()"/>
-            <input type="button" class="btn btn-danger" name="resetBtn" value="Reset" ng-click="fc.resetForm()" />
-        </div>
-    
-    </form>
+                <label for="question">Question</label>
+                <input name="question" class="form-control" ng-model="fc.formData.question" />
+            </div>
+            <div class="form-group">
+                <label for="answer">Answer</label>
+                <input name="answer" class="form-control" ng-model="fc.formData.answer" />
+            </div>
+            <div class="form-group">
+                <label for="displayOrder">display order</label>
+                <input type="number" class="form-control" name="displayOrder" ng-model="fc.formData.displayOrder" />
+            </div>
+            <div class="button-group">
+                <input type="submit" class="btn btn-succes" name="submitBtn" value="Submit" />
+                <input type="button" class="btn btn-warn" name="cancelBtn" value="Cancel" ng-click="fc.cancelForm()" />
+                <input type="button" class="btn btn-danger" name="resetBtn" value="Reset" ng-click="fc.resetForm()" />
+            </div>
+        </form>
+    </div>
+</div>

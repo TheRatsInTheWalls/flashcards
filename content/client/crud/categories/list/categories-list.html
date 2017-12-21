@@ -1,11 +1,27 @@
-<div>
-    <div>
-        <div ng-repeat="category in lc.categories">
-                <p>Category: {{category.category}}</p>
-                <p>Topic: {{category.topic}}</p>
-                <p>display Order: {{category.displayOrder}}</p>
-                <input type="button" class="btn btn-info" ng-click="lc.goEdit(category._id)" value="edit" />
-                <input type="button" class="btn btn-danger" ng-click="lc.delete(category._id)" value="delete" />
-            </div>
+<div class='row'>
+    <div class='col-xs-10 col-xs-offset-1'>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Topic</th>
+                    <th>displayOrder</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="category in lc.categories">
+                    <td>{{category.category}}</td>
+                    <td>{{category.topic}}</td>
+                    <td>{{category.displayOrder}}</td>
+                    <td>
+                        <div class='button-group'>
+                            <input type="button" class="btn btn-info" ng-click="lc.goEdit(category._id)" value="edit" />
+                            <input type="button" class="btn btn-danger" ng-click="lc.delete(category._id)" value="delete" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
