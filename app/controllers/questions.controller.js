@@ -26,7 +26,6 @@ function _readById(req, res) {
     questionsService
         .readById(req.params.id)
         .then(question => {
-            questions._id = questions._id.tostring()
             res.send(question)
         })
         .catch(err => {
@@ -51,7 +50,6 @@ function _update(req, res) {
     questionsService
         .update(req.params.id, req.model)
         .then(() => {
-            const responseModel = new responses.SuccessResponse()
             res.status(200).send(`${req.params.id} updated`)
         })
         .catch(err => {
@@ -64,7 +62,6 @@ function _delete(req, res) {
     questionsService
         .deactivate(req.params.id)
         .then(() => {
-            const responseModel = new responses.SuccessResponse()
             res.status(200).json(`${req.params.id} deleted`)
         })
         .catch(err => {
