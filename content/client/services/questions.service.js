@@ -3,11 +3,11 @@
 
     angular
         .module('client.services')
-        .factory('categoriesService', CategoriesServiceFactory)
+        .factory('questionsService', QuestionsServiceFactory)
 
-    CategoriesServiceFactory.$inject = ['$http', '$q']
+    QuestionsServiceFactory.$inject = ['$http', '$q']
 
-    function CategoriesServiceFactory($http, $q) {
+    function QuestionsServiceFactory($http, $q) {
         return {
             readAll: _readAll,
             readById: _readById,
@@ -16,33 +16,32 @@
             delete: _delete
         }
 
-
         function _readAll() {
-            return $http.get(`/api/categories`)
+            return $http.get(`/api/questions`)
                 .then(result => result.data)
                 .catch(onError)
         }
 
         function _readById(id) {
-            return $http.get(`/api/categories/${id}`)
+            return $http.get(`/api/questions/${id}`)
                 .then(result => result.data)
                 .catch(onError)
         }
 
-        function _create(catOjbect) {
-            return $http.post(`/api/categories`, catOjbect)
-                //.then()
+        function _create(quesObject) {
+            return $http.post(`/api/questions`, quesObject)
+                // .then()
                 .catch(onError)
         }
 
-        function _update(catOjbect) {
-            return $http.put(`/api/categories/${catOjbect._id}`, catOjbect)
-                //.then()
+        function _update(quesObject) {
+            return $http.put(`/api/questions/${quesObject._id}`, quesObject)
+                // .then()
                 .catch(onError)
         }
 
         function _delete(id) {
-            return $http.delete(`/api/categories/${id}`)
+            return $http.delete(`/api/questions/${id}`)
                 //.then()
                 .catch(onError)
         }

@@ -1,0 +1,10 @@
+<div>
+    <div>
+        <div ng-repeat="question in lc.questions">
+            <p>Question: {{question.question}}</p>
+            <p>Answer: {{question.answer}}</p>
+            <input type="button" class="btn btn-info" ng-click="lc.goEdit(question._id)" value="edit" />
+            <input type="button" class="btn btn-danger" ng-click="lc.delete(question._id)" value="delete" />
+        </div>
+    </div>
+</div>

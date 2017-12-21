@@ -1,0 +1,11 @@
+<div>
+    <div>
+        <div ng-repeat="category in lc.categories">
+                <p>Category: {{category.category}}</p>
+                <p>Topic: {{category.topic}}</p>
+                <p>display Order: {{category.displayOrder}}</p>
+                <input type="button" class="btn btn-info" ng-click="lc.goEdit(category._id)" value="edit" />
+                <input type="button" class="btn btn-danger" ng-click="lc.delete(category._id)" value="delete" />
+            </div>
+    </div>
+</div>

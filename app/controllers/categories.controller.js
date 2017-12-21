@@ -14,7 +14,7 @@ function _readAll(req, res) {
     categoriesService
         .readAll()
         .then(categories => {
-            res.json({ categories: categories })
+            res.json(categories)
         })
         .catch(err => {
             console.log(err)
@@ -27,7 +27,6 @@ function _readById(req, res) {
     categoriesService
         .readById(req.params.id)
         .then(category => {
-            category._id = questcategoryions._id.tostring()
             res.send(category)
         })
         .catch(err => {
@@ -52,7 +51,6 @@ function _update(req, res) {
     categoriesService
         .update(req.params.id, req.model)
         .then(() => {
-            const responseModel = new responses.SuccessResponse()
             res.status(200).send(`${req.params.id} updated`)
         })
         .catch(err => {
@@ -65,7 +63,6 @@ function _delete(req, res) {
     categoriesService
         .deactivate(req.params.id)
         .then(() => {
-            const responseModel = new responses.SuccessResponse()
             res.status(200).json(`${req.params.id} deleted`)
         })
         .catch(err => {

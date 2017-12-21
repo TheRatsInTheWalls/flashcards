@@ -1,0 +1,24 @@
+<form name="fc.form" novalidate ng-submit="fc.submitForm()">
+        <div class="form-group">
+            <label for="categoryId">Category ID</label>
+            <input name="categoryId" ng-model="fc.formData.categoryId"/>
+        </div>
+        <div class="form-group">
+                <label for="question">Question</label>
+                <input name="question" ng-model="fc.formData.question"/>
+            </div>
+            <div class="form-group">
+                    <label for="answer">Answer</label>
+                    <input name="answer" ng-model="fc.formData.answer"/>
+                </div>
+        <div class="form-group">
+            <label for="displayOrder">display order</label>
+            <input type="number" name="displayOrder" ng-model="fc.formData.displayOrder"/>
+        </div>
+        <div class="button-group">
+            <input type="submit" class="btn btn-succes" name="submitBtn" value="Submit"/>
+            <input type="button" class="btn btn-warn" name="cancelBtn" value="Cancel" ng-click="fc.cancelForm()"/>
+            <input type="button" class="btn btn-danger" name="resetBtn" value="Reset" ng-click="fc.resetForm()" />
+        </div>
+    
+    </form>
